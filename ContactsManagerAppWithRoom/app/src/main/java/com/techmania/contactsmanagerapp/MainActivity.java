@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if(isUpdated) {
-                            DeletedContacts(contact,position);
+                            DeletedContact(contact,position);
                         } else {
                             dialog.cancel();
                         }
@@ -158,32 +158,68 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void DeletedContacts(Contact contact,int position) {
-        contactArrayList.remove(position);
-        contactAppDatabase.getContactDAO().deleteContact(contact);
-        contactAdapter.notifyDataSetChanged();
+    private void DeletedContact(Contact contact,int position) {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                contactAppDatabase.getContactDAO().deleteContact(contact);
+
+                // Update UI on the main thread
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        contactArrayList.remove(position);
+                        contactAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
     }
 
     private void UpdateContact(String name,String email,int position) {
-        Contact contact = contactArrayList.get(position);
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                Contact contact = contactArrayList.get(position);
+                contact.setName(name);
+                contact.setEmail(email);
 
-        contact.setName(name);
-        contact.setEmail(email);
+                contactAppDatabase.getContactDAO().updateContact(contact);
 
-        contactAppDatabase.getContactDAO().updateContact(contact);
-
-        contactArrayList.set(position,contact);
-        contactAdapter.notifyDataSetChanged();
+                // Update UI on the main thread
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        contactArrayList.set(position, contact);
+                        contactAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
     }
 
     private void CreateContact(String name, String email) {
-        long id = contactAppDatabase.getContactDAO().addContact(new Contact(name,email,0));
-        Contact contact = contactAppDatabase.getContactDAO().getContact(id);
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                long id = contactAppDatabase.getContactDAO().addContact(new Contact(name,email,0));
+                Contact contact = contactAppDatabase.getContactDAO().getContact(id);
 
-        if(contact!=null) {
-            contactArrayList.add(0,contact);
-            contactAdapter.notifyDataSetChanged();
-        }
+                if (contact != null) {
+                    // Use the main thread handler to post UI updates
+                    new Handler(Looper.getMainLooper()).post(new Runnable() {
+                        @Override
+                        public void run() {
+                            contactArrayList.add(0, contact);
+                            contactAdapter.notifyDataSetChanged();
+                        }
+                    });
+                }
+            }
+        });
     }
 
     private void DisplayAllContactInBackground() {
