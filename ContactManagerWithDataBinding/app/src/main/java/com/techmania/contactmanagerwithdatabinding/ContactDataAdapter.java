@@ -6,7 +6,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.techmania.contactmanagerwithdatabinding.databinding.ContactListItemBinding;
 
 import java.util.ArrayList;
 
@@ -16,15 +19,17 @@ public class ContactDataAdapter extends RecyclerView.Adapter<ContactDataAdapter.
     @NonNull
     @Override
     public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact_list_item,parent,false);
-        return new ContactViewHolder(view);
+        ContactListItemBinding contactListItemBinding = DataBindingUtil.inflate(
+                LayoutInflater.from(parent.getContext()),
+                R.layout.contact_list_item,parent,false);
+
+        return new ContactViewHolder(contactListItemBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContactDataAdapter.ContactViewHolder holder, int position) {
         Contact contact = contacts.get(position);
-        holder.name.setText(contact.getName());
-        holder.email.setText(contact.getEmail());
+        holder.contactListItemBinding.setContact(contact);
     }
 
     @Override
@@ -42,12 +47,12 @@ public class ContactDataAdapter extends RecyclerView.Adapter<ContactDataAdapter.
     }
 
     class ContactViewHolder extends RecyclerView.ViewHolder {
-        private TextView name,email;
 
-        public ContactViewHolder(@NonNull View itemView) {
-            super(itemView);
-            this.name = itemView.findViewById(R.id.textViewName);
-            this.email = itemView.findViewById(R.id.textViewEmail);
+        private ContactListItemBinding contactListItemBinding;
+        public ContactViewHolder(@NonNull ContactListItemBinding contactListItemBinding) {
+            super(contactListItemBinding.getRoot());
+
+            this.contactListItemBinding = contactListItemBinding;
         }
     }
 }

@@ -3,14 +3,24 @@ package com.techmania.contactmanagerwithdatabinding;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.Insert;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "contact_table")
 public class Contact extends BaseObservable {
+    @PrimaryKey(autoGenerate = true)
+    int countId;
     String name, email;
 
-    public Contact(String name, String email) {
+    @Ignore
+    public Contact() {
+    }
+
+    public Contact(String name, String email, int countId) {
         this.name = name;
         this.email = email;
+        this.countId = countId;
     }
 
     @Bindable
@@ -31,5 +41,14 @@ public class Contact extends BaseObservable {
     public void setEmail(String email) {
         this.email = email;
         notifyPropertyChanged(BR.email);
+    }
+
+    @Bindable
+    public int getCountId() {
+        return countId;
+    }
+
+    public void setCountId(int countId) {
+        this.countId = countId;
     }
 }

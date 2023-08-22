@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         activityMainBinding.setClickHandler(clickHandlers);
 
         //RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = activityMainBinding.recyclerView;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         LoadData();
 
         //Handling Swiping
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback() {
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 return false;
@@ -82,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == 1 && resultCode ==RESULT_OK) {
-            String name = data.getDataString("NAME");
-            String email = data.getDataString("EMAIL");
+            String name = data.getStringExtra("NAME");
+            String email = data.getStringExtra("EMAIL");
 
-            Contact contact = new Contact(name,email);
+            Contact contact = new Contact(name,email,0);
 
             AddNewContact(contact);
         }

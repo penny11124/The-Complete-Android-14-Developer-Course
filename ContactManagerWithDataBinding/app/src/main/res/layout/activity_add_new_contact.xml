@@ -3,7 +3,7 @@
     <data>
         <variable
             name="clickHandler"
-            type="com.techmania.contactmanagerwithdatabinding.AddNewContactActivity.AddNewContactActivityClickHandlers" />
+            type="com.techmania.contactmanagerwithdatabinding.AddNewContactActivity.AddNewContactClickHandlers" />
         <variable
             name="contact"
             type="com.techmania.contactmanagerwithdatabinding.Contact" />
