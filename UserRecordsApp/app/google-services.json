@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1076816743808",
+    "project_id": "user-app-ff960",
+    "storage_bucket": "user-app-ff960.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076816743808:android:d5ae959cef2a81ba7dc565",
+        "android_client_info": {
+          "package_name": "com.techmania.userrecordsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076816743808-mpr8giekmi33emho0ds3v898c6ikmrtg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techmania.userrecordsapp",
+            "certificate_hash": "aeb25f85a85bd468a77f444b50b0c1ca8157763d"
+          }
+        },
+        {
+          "client_id": "1076816743808-0g0h5gvvab1ic9t5sk1qe22n2ci191e7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2_-oIJV0GQwPb66kZyWxO2OhZfm5DMAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076816743808-0g0h5gvvab1ic9t5sk1qe22n2ci191e7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
