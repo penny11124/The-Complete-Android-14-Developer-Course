@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "64204471124",
+    "project_id": "shoppingapp-d80bf",
+    "storage_bucket": "shoppingapp-d80bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64204471124:android:941a69927493f1dfaa26c1",
+        "android_client_info": {
+          "package_name": "com.techmania.shoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64204471124-uvsl24btbuh35q2trgu1pmav4cnvmn6t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techmania.shoppingapp",
+            "certificate_hash": "aeb25f85a85bd468a77f444b50b0c1ca8157763d"
+          }
+        },
+        {
+          "client_id": "64204471124-heeneqsobmqb9cnj7rh47nliavu8k8ko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATsAp8OtkSCy9Ze55pz7XHHUPVFL_jQRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64204471124-heeneqsobmqb9cnj7rh47nliavu8k8ko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
