@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "854129877123",
+    "project_id": "firestore-app-c1adb",
+    "storage_bucket": "firestore-app-c1adb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854129877123:android:15b57920d66cf05656bbb6",
+        "android_client_info": {
+          "package_name": "com.techmania.firestoreapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854129877123-ve4sglv7a27sa6fm5v8hqs06m12u0pme.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techmania.firestoreapp",
+            "certificate_hash": "aeb25f85a85bd468a77f444b50b0c1ca8157763d"
+          }
+        },
+        {
+          "client_id": "854129877123-k6isig31p3a0oqermbs4efcuama9pjop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLpTP_cEM_2Tlx_85lE-CFfjS1XZI4zbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854129877123-k6isig31p3a0oqermbs4efcuama9pjop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
