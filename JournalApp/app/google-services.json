@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "221529409564",
+    "project_id": "journal-app-36f2a",
+    "storage_bucket": "journal-app-36f2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221529409564:android:a15c8b31a04cd1e865f7d9",
+        "android_client_info": {
+          "package_name": "com.techmania.journalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221529409564-c2idq4tlo46o608krd1rt48v76phpbob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techmania.journalapp",
+            "certificate_hash": "aeb25f85a85bd468a77f444b50b0c1ca8157763d"
+          }
+        },
+        {
+          "client_id": "221529409564-2rai9jgkj50gkv9sa4has6rrg4phcmrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8cNuUR3WHwK4V2gnJJ2qpldd3svjAJjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221529409564-2rai9jgkj50gkv9sa4has6rrg4phcmrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
