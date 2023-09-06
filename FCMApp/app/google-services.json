@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "600580162491",
+    "project_id": "fcm-app-11b18",
+    "storage_bucket": "fcm-app-11b18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600580162491:android:3b2f27460e47bf1730ba9e",
+        "android_client_info": {
+          "package_name": "com.techmania.fcmapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600580162491-inpgqme2lg8cuf5amtem8m21n1gs9phd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClQbaH_btQULeijyusoxXbo4y5mngnEyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600580162491-inpgqme2lg8cuf5amtem8m21n1gs9phd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
